@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt-get install nginx
+sudo apt-get install nginx-common
 path=~/web/
 mkdir -p ${path}{public/{img,css,js},uploads,etc}
 
@@ -25,4 +25,3 @@ else
 fi
 sudo ln -sf ${path}etc/nginx.conf /etc/nginx/sites-enabled/default
 sudo /etc/init.d/nginx start
-https://github.com/luxmaes/stepic_web_project.git
