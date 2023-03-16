@@ -4,7 +4,7 @@ sudo apt-get install nginx
 path=~/web/
 mkdir -p ${path}{public/{img,css,js},uploads,etc}
 
-if [!-e "${path}etc/nginx.conf"]
+if [ ! -e "${path}etc/nginx.conf" ]
 then
     bash -c "cat <<- EOF >> ${path}etc/nginx.conf
     server {
@@ -24,4 +24,5 @@ else
     cat ${path}etc/nginx.conf
 fi
 sudo ln -sf ${path}etc/nginx.conf /etc/nginx/sites-enabled/default
-sudo systemctl start nginx
+sudo /etc/init.d/nginx start
+https://github.com/luxmaes/stepic_web_project.git
