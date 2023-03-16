@@ -9,7 +9,7 @@ then
     bash -c "cat <<- EOF >> ${path}etc/nginx.conf
 server {
     location ^~ /uploads/ {
-        root ${path};
+        root ${path}uploads;
     }
     location ~* ^\/img\/.+\.jpg$ {
         root ${path}public;
