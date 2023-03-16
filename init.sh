@@ -9,7 +9,7 @@ then
     bash -c "cat <<- EOF >> ${path}etc/nginx.conf
 server {
     location ^~ /uploads/ {
-        root ${path}uploads;
+        root ${path};
     }
     location ~* ^\/img\/.+\.jpg$ {
         root ${path}public;
@@ -23,5 +23,6 @@ else
     echo "The file ${path}etc/nginx.conf already exists"
     cat ${path}etc/nginx.conf
 fi
+sudo rm -r /etc/nginx/sites-enabled/default
 sudo ln -sf ${path}etc/nginx.conf /etc/nginx/sites-enabled/default
-sudo /etc/init.d/nginx start
+sudo /etc/init.d/nginx restart
