@@ -42,4 +42,4 @@ else
 fi
 sudo ln -sf ${path}etc/nginx.conf /etc/nginx/sites-enabled/default
 sudo /etc/init.d/nginx restart
-cd ${path}etc && gunicorn -c file:${path}hello.py hello:app &
+cd ${path} && gunicorn -c file:${path}hello.py hello:app &
