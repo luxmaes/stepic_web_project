@@ -13,7 +13,7 @@ server {
     error_log /var/log/nginx/test.log info;
 
     location ^~ /hello/ {
-        proxy_pass https://0.0.0.0:8080;
+        proxy_pass http://0.0.0.0:8080;
         proxy_set_header Host $host;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
     }
