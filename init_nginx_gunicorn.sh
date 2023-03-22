@@ -11,11 +11,11 @@ then
 server {
     listen 80;
     error_log /var/log/nginx/test.log info;
+    proxy_set_header Host $host;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
 
     location ^~ /hello/ {
         proxy_pass http://0.0.0.0:8080;
-        proxy_set_header Host $host;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
     }
 }
 EOF
